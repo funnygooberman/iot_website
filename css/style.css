@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    background: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400
+}
+
+h1 {
+    padding-left: 100px;
+    font-size: 150px;
+    text-align: left;
+    animation: fadeIn 5s;
+}
+
+h2 {
+    padding-right: 100px;
+    font-size: 100px;
+    text-align: right;
+    animation: fadeIn 8s;
+    color: blue
+}
+
+h3 { 
+    padding-left: 150px;
+    font-size: 150px;
+    text-align: left;
+    animation: fadeIn 10s;
+    
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: #2640C0
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding-top: 10px 0;
+}
+
+nav{
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 17px;
+
+    position: relative;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #FFFFFF;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
