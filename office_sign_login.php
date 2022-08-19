@@ -48,7 +48,7 @@
             <div class="form-group">
                 <p><input type="submit" class="button" value="Login"></p>
             </div>
-            <p>Don't have an account? <a1 href="register.php">Sign up now</a1>.</p>
+            <p>Don't have an account? <a1 href="register.php">Sign up now</a1></p>
         </form>
     </div>
 </body>
