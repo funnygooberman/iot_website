@@ -28,7 +28,7 @@
         <p>A low power device that updates its contents over the air.</p>
         <p>Managed over the internet for ease of use.</p>
         <p>
-            <a href="office_sign_login.php" class="a1">Configure your Office Sign here</a>
+            <button class="button">Configure your Office Sign Here</button>
         </p>
 
     </body>
