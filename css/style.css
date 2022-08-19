@@ -25,6 +25,12 @@ h3 {
     
 }
 
+input {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background: grey;
+}
+
 p {
     padding-left: 100px;
     font-size: 40px;
