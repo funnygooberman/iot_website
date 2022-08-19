@@ -26,9 +26,10 @@ h3 {
 }
 
 input {
-    padding: 12px 20px;
+    padding: 12px 18px;
     box-sizing: border-box;
-    background: grey;
+    background: lightgray;
+    width: 25%
 }
 
 p {
