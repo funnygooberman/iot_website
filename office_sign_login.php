@@ -46,7 +46,7 @@
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="button" value="Login">
+                <p><input type="submit" class="button" value="Login"></p>
             </div>
             <p>Don't have an account? <a1 href="register.php">Sign up now</a1>.</p>
         </form>
