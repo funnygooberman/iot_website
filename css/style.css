@@ -52,7 +52,7 @@ p {
     background: blue;
 }
 
-button {
+.button {
     border: none;
     color: white;
     padding: 15px 32px;
