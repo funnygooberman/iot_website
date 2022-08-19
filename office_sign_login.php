@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <head>
+<html lang="en">
+<head>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans">
         <link href="css/style.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
@@ -23,13 +23,33 @@
         </div>
     </header>
 
-        <h1>Office Signs</h1>
+<body>
+    <div class="wrapper">
+        <h2>Login</h2>
+        <p style="background-color:#bf4641;">Please fill in your credentials to login.</p>
 
-        <p>A low power device that updates its contents over the air.</p>
-        <p>Managed over the internet for ease of use.</p>
-        <p>
-            <button class="button">Configure your Office Sign Here</button>
-        </p>
+        <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
 
-    </body>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="background-color:#bf4641;">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>    
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        </form>
+    </div>
+</body>
 </html>
