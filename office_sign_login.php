@@ -25,8 +25,8 @@
 
 <body>
     <div class="wrapper">
-        <h2>Login</h2>
-        <p style="background-color:#bf4641;">Please fill in your credentials to login.</p>
+        <h1>Login</h1>
+        <p>Please fill in your credentials to login.</p>
 
         <?php 
         if(!empty($login_err)){
@@ -34,7 +34,7 @@
         }        
         ?>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" style="background-color:#bf4641;">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
