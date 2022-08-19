@@ -9,14 +9,12 @@ h1 {
     padding-left: 100px;
     font-size: 150px;
     text-align: left;
-    animation: fadeIn 5s;
 }
 
 h2 {
     padding-right: 100px;
     font-size: 100px;
     text-align: right;
-    animation: fadeIn 8s;
     color: blue
 }
 
@@ -24,7 +22,6 @@ h3 {
     padding-left: 150px;
     font-size: 150px;
     text-align: left;
-    animation: fadeIn 10s;
     
 }
 
@@ -32,7 +29,6 @@ p {
     padding-left: 100px;
     font-size: 40px;
     text-align: left;
-    animation: fadeIn 5s;
 }
 
 @keyframes fadeIn {
