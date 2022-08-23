@@ -1,7 +1,7 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define("_DB_SERVERNAME", "127.0.0.1");
+define("_DB_SERVERNAME", "localhost");
 define("_DB_NAME", "iotcapst_backend");
 define("_DB_USERNAME", "iotcapst_user");
 define("_DB_PASSWORD", "bqX~qow-hJB#");
