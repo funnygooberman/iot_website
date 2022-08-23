@@ -27,7 +27,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <ul>
                     <li><a href="officesign_dashboard.php">Home</a></li>
                     <li><a href="#">Create Sign</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="office_sign_logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
