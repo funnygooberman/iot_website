@@ -143,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="button" value="Submit">
             </div>
-            <p>Already have an account? <a class="a1" href="office_sign_login.php">Login here</a>.</p>
+            <p>Already have an account? <a class="a1" href="office_sign_login.php">Login here</a></p>
         </form>
     </div>    
 </body>

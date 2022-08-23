@@ -2,8 +2,8 @@
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
 $dbhost = "localhost";
-$dbuser = "iotcapst_backend";
-$dbpass = "bqX~qow-hJB#";
+$dbuser = "root";
+$dbpass = "C00lbe@ns2014!!";
 $db = "iotcapst_backend";
  
 /* Attempt to connect to MySQL database */
