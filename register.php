@@ -12,11 +12,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
-    } elseif(!preg_match('/^[a-zA-Z0-9_.]+$/', trim($_POST["username"]))){
-        $username_err = "Username can only contain letters, numbers, underscores, and periods.";
+    } elseif(!preg_match('/^[a-zA-Z0-9.]+$/', trim($_POST["username"]))){
+        $username_err = "Username can only contain letters, numbers, and periods.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT id FROM Users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
