@@ -1,13 +1,13 @@
 <?php
 /* Database credentials. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-define("_DB_SERVERNAME", "localhost");
-define("_DB_NAME", "iotcapst_backend");
-define("_DB_USERNAME", "iotcapst_user");
-define("_DB_PASSWORD", "bqX~qow-hJB#");
+$dbhost = "localhost";
+$dbuser = "iotcapst_backend";
+$dbpass = "bqX~qow-hJB#";
+$db = "iotcapst_backend";
  
 /* Attempt to connect to MySQL database */
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
  
 // Check connection
 if($link === false){
