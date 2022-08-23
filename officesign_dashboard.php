@@ -32,5 +32,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             </nav>
         </div>
     </header>
+
+    <h1> Yay it works! </h1>
     </body>
 </html>
