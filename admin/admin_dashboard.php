@@ -25,14 +25,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <img src="assets/logo.png" alt="logo" class="logo" width="300" heigh="300">
             <nav>
                 <ul>
-                    <li><a href="officesign_dashboard.php">Home</a></li>
-                    <li><a href="#">Manage Sign</a></li>
-                    <li><a href="office_sign_logout.php">Logout</a></li>
+                    <li><a href="admin_dashboard.php">Home</a></li>
+                    <li><a href="#">Add A Pi</a></li>
+                    <li><a href="#">Manage Users</a></li>
+                    <li><a href="admin_logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <h1> My Office Sign </h1>
+    <h1> Users and PIs </h1>
     </body>
 </html>
+
