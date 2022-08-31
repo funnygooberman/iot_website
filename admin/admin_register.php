@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "/config.php";
+require_once "../config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <html lang="en">
 <head>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans">
-        <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <link href="../css/style.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
         <title>USAFA IOT</title>
     </head>
@@ -108,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <header>
         <div class="container">
             
-            <img src="/assets/logo.png" alt="logo" class="logo" width="300" heigh="300">
+            <img src="../assets/logo.png" alt="logo" class="logo" width="300" heigh="300">
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
