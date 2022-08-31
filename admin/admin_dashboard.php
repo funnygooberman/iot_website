@@ -13,7 +13,7 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
 <html>
     <head>
         <link href="http://fonts.googleapis.com/css?family=Open+Sans">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
         <meta charset="UTF-8">
         <title>USAFA IOT</title>
     </head>
@@ -22,7 +22,7 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
     <header>
         <div class="container">
             
-            <img src="assets/logo.png" alt="logo" class="logo" width="300" heigh="300">
+            <img src="/assets/logo.png" alt="logo" class="logo" width="300" heigh="300">
             <nav>
                 <ul>
                     <li><a href="admin_dashboard.php">Home</a></li>
