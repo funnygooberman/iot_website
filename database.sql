@@ -16,7 +16,7 @@ CREATE TABLE displays (
     PRIMARY KEY (pi_id)
 );
 
-CREATE TABLE admin (
+CREATE TABLE admins (
     admin_id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
