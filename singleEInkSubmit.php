@@ -150,5 +150,5 @@ $timeDate = date('m/d/Y h:i:s a', time());
 
 $_SESSION['message'] = $_SESSION['message'] . $timeDate;
 
-header("Location: singleEInkForm.php");
+header("Location: officesign_dashboard.php");
 ?>
