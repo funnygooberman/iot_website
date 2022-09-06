@@ -24,13 +24,13 @@
 
     // Connects to the Database (or dies trying)
     // Thanks to https://www.binpress.com/using-php-with-mysql/
-    function db_connect($db_name = _DB_NAME) {
+    function db_connect($db) {
         // Connection is static -- i.e., only one should exist for the lifetime of the script
         static $conn;
         
         if (!isset($conn)) {
             // Attempts to connect
-            $conn = new mysqli(_DB_SERVERNAME, _DB_USERNAME, _DB_PASSWORD, $db_name);
+            $conn = new mysqli($dbhost, $dbuser, $dbpass, $db_name);
 
             // Checks to see if an error occurred
             if ($conn->connect_error) { 
