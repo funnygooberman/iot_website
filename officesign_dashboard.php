@@ -50,7 +50,7 @@ while($row = $result->fetch_assoc()){
 	}
 	div.absolute2 {
 	  position: absolute;
-	  top: 50%;
+	  top: 30%;
 	  left: 37%;
 	}
 	div.absolute3 {
