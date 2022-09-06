@@ -135,7 +135,7 @@ while($row = $result->fetch_assoc()){
 		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 280%;"> 
 		
 		<input type="file" id="actual-btn" hidden/>
-		<label for="actual-btn">Choose File</label>
+		<p for="actual-btn">Choose File</p>
            </div>
 	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
 	 </form>
