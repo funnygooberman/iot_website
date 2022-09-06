@@ -79,7 +79,7 @@ while($row = $result->fetch_assoc()){
 
 	.alert {
 	  padding: 20px;
-	  background-color: #42a2b8;
+	  background-color: blue;
 	  color: white;
 	}
 
@@ -127,7 +127,7 @@ while($row = $result->fetch_assoc()){
 	<form action="singleEInkSubmit.php" align = "center" method="post" enctype="multipart/form-data">
 
 	  <img src="bg11.png" alt="BG Image" style="width: 1000px height: 500px" />	
-	  <input class="absolute" <input type="text2" name="faculty_name" value = "<?php echo $name2; ?>" >
+	  <input class="absolute" type="text2" name="faculty_name" value = "<?php echo $name2; ?>" >
            <div class="absolute2"> <input type = "text" name="title" value = "<?php echo $title2; ?>" ></div>
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
 	  <div class="absolute4"> <input type = "text" name = "location" value = "<?php echo $location2; ?>" ></div>
