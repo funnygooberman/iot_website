@@ -50,13 +50,13 @@ while($row = $result->fetch_assoc()){
 	}
 	div.absolute2 {
 	  position: absolute;
-	  top: 37%;
+	  top: 12%;
 	  left: 37%;
 	}
 	div.absolute3 {
 	  position: absolute;
-	  top: 45%;
-	  left: 69%;
+	  top: 28%;
+	  left: 37%;
 	}
 	div.absolute4 {
 	  position: absolute;
@@ -72,7 +72,7 @@ while($row = $result->fetch_assoc()){
 	}
 	div.absolute6 {
 	  position: absolute;
-	  top: 120%;
+	  top: 100%;
 	  left: 15%;
 	  width: 10%;
 	  height: 10%;
@@ -132,7 +132,7 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
 	  <div class="absolute4"> <input type = "text" name = "location" value = "<?php echo $location2; ?>" ></div>
 	  <div class="absolute5"> 
-		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 140%;"> 
+		<img src="<?php echo $file_path2 ?>" alt="Upload an image!" style="height: 300%; width: 140%;"> 
 		
 		<input type="file" id="actual-btn" hidden/>
 		<label class="button2" for="actual-btn">Choose File</label>
