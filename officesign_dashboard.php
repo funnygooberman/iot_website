@@ -56,7 +56,7 @@ while($row = $result->fetch_assoc()){
 	div.absolute3 {
 	  position: absolute;
 	  top: 28%;
-	  left: 37%;
+	  left: 45%;
 	}
 	div.absolute4 {
 	  position: absolute;
@@ -128,7 +128,7 @@ while($row = $result->fetch_assoc()){
 	<form action="singleEInkSubmit.php" align = "center" method="post" enctype="multipart/form-data">
 	
 	  <input class="absolute" type="text2" name="faculty_name" value = "<?php echo $name2; ?>" >
-           <div class="absolute2"> <input type = "text" name="title" value = "<?php echo $title2; ?>" ></div>
+           <div class="absolute2"> <input type = "text2" name="title" value = "<?php echo $title2; ?>" ></div>
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
 	  <div class="absolute4"> <input type = "text" name = "location" value = "<?php echo $location2; ?>" ></div>
 	  <div class="absolute5"> 
