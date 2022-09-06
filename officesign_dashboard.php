@@ -52,19 +52,19 @@ while($row = $result->fetch_assoc()){
 	  position: absolute;
 	  top: 27%;
 	  left: 37%;
-	  width: 50%;
+	  width: 70%;
 	}
 	div.absolute3 {
 	  position: absolute;
 	  top: 35%;
 	  left: 45%;
-	  width: 50%;
+	  width: 70%;
 	}
 	div.absolute4 {
 	  position: absolute;
 	  top: 12%;
-	  left: 75%;
-	  width: 30%;
+	  left: 70%;
+	  width: 35%;
 	}
 	div.absolute5 {
 	  position: absolute;
