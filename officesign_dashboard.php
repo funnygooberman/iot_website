@@ -40,7 +40,7 @@ while($row = $result->fetch_assoc()){
 	  top: 0px;
 	  left: 15%;
 	  width: 1000px;
-	  height: 500px;
+	  height: 600px;
 	  background-image: url("bg11.png")
 	}
 	.absolute {
