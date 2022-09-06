@@ -1,19 +1,10 @@
 <?php
     /* Database credentials. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "C00lbe@ns2014!!";
-    $db = "iotcapst_backend";
-     
-    /* Attempt to connect to MySQL database */
-    $link = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
-     
-    // Check connection
-    if($link === false){
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
-    
+    define("_DB_SERVERNAME", "localhost");
+    define("_DB_NAME", "iotcapst_backend");
+    define("_DB_USERNAME", "root");
+    define("_DB_PASSWORD", "C00lbe@ns2014!!");
 
     // Outputs Debug Text
     function debug ($text, $verbose = false) {
@@ -24,13 +15,13 @@
 
     // Connects to the Database (or dies trying)
     // Thanks to https://www.binpress.com/using-php-with-mysql/
-    function db_connect($db) {
+    function db_connect($db_name = _DB_NAME) {
         // Connection is static -- i.e., only one should exist for the lifetime of the script
         static $conn;
         
         if (!isset($conn)) {
             // Attempts to connect
-            $conn = new mysqli($dbhost, $dbuser, $dbpass, $db_name);
+            $conn = new mysqli(_DB_SERVERNAME, _DB_USERNAME, _DB_PASSWORD, $db_name);
 
             // Checks to see if an error occurred
             if ($conn->connect_error) { 
@@ -43,14 +34,14 @@
 
     // Returns the Error Message if a query goes bad
     function db_error() {
-        $connection = db_connect($db);
+        $connection = db_connect();
         return mysqli_error($connection);
     }
 
     // Executes an INSERT, REMOVE Database Query
     function db_query($query, $verbose = false) {
         // Connect to the database
-        $conn = db_connect($db);
+        $conn = db_connect();
 
         // Query the database
         debug('<br>' . $query . '<br>', $verbose);
@@ -69,7 +60,7 @@
     // Surrounds a value with the ' characters, and escapes code characters to prevent injection attacks
     function db_quote($value) {
         
-        $conn = db_connect($db);
+        $conn = db_connect();
         return "'" . mysqli_real_escape_string($conn, $value) . "'";
         
     }
