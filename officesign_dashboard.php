@@ -114,7 +114,7 @@ while($row = $result->fetch_assoc()){
         </div>
     </header>
 
-    <h1> My Office Sign </h1>
+    <p>My Office Sign</p>
 
       
     </head>
