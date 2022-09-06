@@ -46,7 +46,7 @@ while($row = $result->fetch_assoc()){
 	.absolute {
 	  position: absolute;
 	  top: 15%;
-	  left: 13%;
+	  left: 15%;
 	}
 	div.absolute2 {
 	  position: absolute;
@@ -65,7 +65,7 @@ while($row = $result->fetch_assoc()){
 	}
 	div.absolute5 {
 	  position: absolute;
-	  top: 35%;
+	  top: 30%;
 	  left: 12%;
 	  width: 10%;
 	  height: 20%;
@@ -134,7 +134,7 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute5"> 
 		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 280%;"> 
 		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-		<input type="file" name="fileToUpload" id="fileToUpload">
+		<input type="file" name="fileToUpload" id="fileToUpload"></textarea> 
            </div>
 	  <div class="absolute6"><button type="submit">Submit</button></div> 
 	 </form>
