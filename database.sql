@@ -4,7 +4,7 @@ CREATE TABLE users (
     password varchar(255) NOT NULL,
     pi_id varchar(100),
     PRIMARY KEY (id),
-    FOREIGN KEY (pi_id) REFERENCES displays(pi_id)
+    FOREIGN KEY (pi_id) REFERENCES displays (pi_id)
 );
 
 CREATE TABLE display_data (
@@ -12,11 +12,12 @@ CREATE TABLE display_data (
     image_path varchar(255),
     location varchar(255),
     message varchar(1000),
+    title varchar(100),
     userID int,
     pi_id VARCHAR(100),
     PRIMARY KEY (pi_id),
     FOREIGN KEY (userID) REFERENCES users(id),
-    FOREIGN KEY (pi_id) REFERENCES displays(pi_id)
+    FOREIGN KEY (pi_id) REFERENCES displays (pi_id)
 );
 
 CREATE TABLE displays (
