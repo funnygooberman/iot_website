@@ -141,7 +141,7 @@ while($row = $result->fetch_assoc()){
 		<input type="file" id="actual-btn" hidden/>
 		<label class="button2" for="actual-btn">Choose File</label>
            </div>
-	  <div class="absolute4"> <input type = "text" name = "location" style="100px" value = "<?php echo $location2; ?>" ></div>
+	  <input type = "text" name = "location" style="100px" value = "<?php echo $location2; ?>">
 	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
 	 </form>
 </div>
