@@ -43,14 +43,14 @@
 
     // Returns the Error Message if a query goes bad
     function db_error() {
-        $connection = db_connect();
+        $connection = db_connect($db);
         return mysqli_error($connection);
     }
 
     // Executes an INSERT, REMOVE Database Query
     function db_query($query, $verbose = false) {
         // Connect to the database
-        $conn = db_connect();
+        $conn = db_connect($db);
 
         // Query the database
         debug('<br>' . $query . '<br>', $verbose);
@@ -69,7 +69,7 @@
     // Surrounds a value with the ' characters, and escapes code characters to prevent injection attacks
     function db_quote($value) {
         
-        $conn = db_connect();
+        $conn = db_connect($db);
         return "'" . mysqli_real_escape_string($conn, $value) . "'";
         
     }
