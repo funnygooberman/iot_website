@@ -125,7 +125,7 @@ while($row = $result->fetch_assoc()){
 <div class = "backG"> 
 	<form action="singleEInkSubmit.php" align = "center" method="post" enctype="multipart/form-data">
 
-	  <img src="bg11.png" alt="BG Image" style="width: 20vw; min-width: 2600px;" />	
+	  <img src="bg11.png" alt="BG Image" style="width: 1000px height: 500px" />	
 	  <input class="absolute" <input type="text2" name="faculty_name" value = "<?php echo $name2; ?>" >
            <div class="absolute2"> <input type = "text" name="title" value = "<?php echo $title2; ?>" ></div>
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
