@@ -51,13 +51,13 @@ while($row = $result->fetch_assoc()){
 	div.absolute2 {
 	  position: absolute;
 	  top: 27%;
-	  left: 37%;
+	  left: 25%;
 	  width: 70%;
 	}
 	div.absolute3 {
 	  position: absolute;
 	  top: 35%;
-	  left: 45%;
+	  left: 25%;
 	  width: 70%;
 	}
 	div.absolute4 {
