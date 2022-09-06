@@ -46,7 +46,7 @@ while($row = $result->fetch_assoc()){
 	.absolute {
 	  position: absolute;
 	  top: 12%;
-	  left: 13%;
+	  left: 14%;
 	}
 	div.absolute2 {
 	  position: absolute;
@@ -65,7 +65,7 @@ while($row = $result->fetch_assoc()){
 	}
 	div.absolute5 {
 	  position: absolute;
-	  top: 25%;
+	  top: 28%;
 	  left: 12%;
 	  width: 10%;
 	  height: 20%;
