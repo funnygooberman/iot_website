@@ -5,7 +5,7 @@
      
     // Check if the user is logged in, if not then redirect him to login page
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header("location: login.php");
+        header("location: office_sign_login.php");
         exit;
     }
     
@@ -23,7 +23,6 @@ while($row = $result->fetch_assoc()){
   $message2 = $row['message'];
   $title2 = $row['title'];
   $pi_id = $row['pi_id'];
-  
 }
 
 
@@ -97,34 +96,33 @@ $php_message= $_POST[message];
 
 $php_location= $_POST[location];
 
-$php_pi_id= $_POST[pi_id]
+$php_pi_id= $_POST[pi_id];
 
-$blank = "";
 
 $base_directory = "images/einkimages/";
 
 
-if (strcmp($php_name, $blank) == 0) {
+if (empty($php_name) == 0) {
 
 	$php_name = $name2;
 }
 
-if (strcmp($php_message, $blank) == 0) {
+if (empty($php_message) == 0) {
 
 	$php_message = $message2;
 }
 
-if (strcmp($php_title, $blank) == 0) {
+if (empty($php_title) == 0) {
 
 	$php_title = $title2;
 }
 
-if (strcmp($php_location, $blank) == 0) {
+if (empty($php_location) == 0) {
 
 	$php_location = $location2;
 } 
 
-if (strcmp($php_pi_id, $blank) == 0) {
+if (empty($php_pi_id) == 0) {
 
 	$php_pi_id = $pi_id;
 } 
