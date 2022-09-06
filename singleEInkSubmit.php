@@ -81,7 +81,7 @@ if ($uploadOk == 0) {
 else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
   } else {
-	header("Location: singleEInkForm.php");
+	header("Location: officesign_dashboard.php");
   }
 }
 
