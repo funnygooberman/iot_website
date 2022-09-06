@@ -38,14 +38,14 @@ while($row = $result->fetch_assoc()){
 	div.backG{
 	  position: relative;
 	  top: 0px;
-	  left: 20%;
+	  left: 15%;
 	  width: 1000px;
 	  height: 500px;
 	}
 	.absolute {
 	  position: absolute;
-	  top: 27%;
-	  left: 37%;
+	  top: 20%;
+	  left: 30%;
 	}
 	div.absolute2 {
 	  position: absolute;
