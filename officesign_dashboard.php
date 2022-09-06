@@ -133,7 +133,7 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute4"> <input type = "text" name = "location" value = "<?php echo $location2; ?>" ></div>
 	  <div class="absolute5"> 
 		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 280%;"> 
-		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		
 		<input type="file" name="fileToUpload" id="fileToUpload"/>
            </div>
 	  <div class="absolute6"><button type="submit">Submit</button></div> 
