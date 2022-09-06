@@ -132,8 +132,8 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
 	  <div class="absolute4"> <input type = "text" name = "location" value = "<?php echo $location2; ?>" ></div>
 	  <div class="absolute5"> 
-		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 100%;"> 
-		
+		<img src="<?php echo $file_path2 ?>" alt="User Image" style="height: 300%; width: 150%;"> 
+		<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<input type="file" id="actual-btn" hidden/>
 		<label class="button" for="actual-btn">Choose File</label>
            </div>
