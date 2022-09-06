@@ -7,7 +7,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: office_sign_login.php");
     exit;
 }
-require_once "config.php";
+require_once "database.php";
 $php_id = $_SESSION["id"];
 $check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
 $result = db_query($check_query);
