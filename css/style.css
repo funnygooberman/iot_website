@@ -138,3 +138,16 @@ nav a::before {
 nav a:hover::before {
     width: 100%;
 }
+
+.button2 {
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background: blue;
+    
+}
