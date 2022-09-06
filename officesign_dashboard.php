@@ -146,11 +146,7 @@ while($row = $result->fetch_assoc()){
 		
         <br>
 	    <br>
-	<body>
-
-
     <?php //$connection->close(); ?>
-	</body>
     </body>
 </html>
 
