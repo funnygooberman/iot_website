@@ -6,7 +6,7 @@
     define("_DB_USERNAME", "root");
     define("_DB_PASSWORD", "C00lbe@ns2014!!");
 
-    $link = mysqli_connect(_DB_SERVER, _DB_USERNAME, _DB_PASSWORD, _DB_NAME);
+    $link = mysqli_connect(_DB_SERVERNAME, _DB_USERNAME, _DB_PASSWORD, _DB_NAME);
 
     // Outputs Debug Text
     function debug ($text, $verbose = false) {
