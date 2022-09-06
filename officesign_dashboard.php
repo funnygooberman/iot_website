@@ -9,16 +9,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once "config.php";
 $php_id = $_SESSION["id"];
-$check_query = "SELECT * FROM eink_messages WHERE id = $php_id;";
+$check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
 $result = db_query($check_query);
 
 while($row = $result->fetch_assoc()){
-     $name2 = $row['faculty_name'];
-     $message2 = $row['message'];
-     $title2 = $row['title'];
-     $location2 = $row['location'];
-     $file_path2 = $row['file_path'];
-   }
+    $name2 = $row['faculty_name'];
+    $file_path2 = $row['file_path'];
+    $location2 = $row['location'];
+    $message2 = $row['message'];
+    $title2 = $row['title'];
+    
+  }
 ?>
 
 <!DOCTYPE html>
