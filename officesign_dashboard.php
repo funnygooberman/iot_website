@@ -38,6 +38,7 @@ while($row = $result->fetch_assoc()){
 	div.backG{
 	  position: relative;
 	  top: 0px;
+	  left: 20%;
 	  width: 1000px;
 	  height: 500px;
 	}
