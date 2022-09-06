@@ -13,8 +13,8 @@ $check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
 $result = db_query($check_query);
 
 while($row = $result->fetch_assoc()){
-    $name2 = $row['faculty_name'];
-    $file_path2 = $row['file_path'];
+    $name2 = $row['name'];
+    $file_path2 = $row['image_path'];
     $location2 = $row['location'];
     $message2 = $row['message'];
     $title2 = $row['title'];
@@ -131,7 +131,7 @@ while($row = $result->fetch_assoc()){
 <div class = "backG"> 
 	<form action="singleEInkSubmit.php" align = "center" method="post" enctype="multipart/form-data">
 	
-	  <input class="absolute" type="text2" name="faculty_name" style="width: 500px" value = "<?php echo $name2; ?>" >
+	  <input class="absolute" type="text2" name="name" style="width: 500px" value = "<?php echo $name2; ?>" >
            <div class="absolute2"> <input type = "text" name="title" style="width 200px" value = "<?php echo $title2; ?>" ></div>
 	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
 	  <div class="absolute4"> <input type = "text" name = "location" style="100px" value = "<?php echo $location2; ?>" ></div>
@@ -145,7 +145,7 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
 	 </form>
 </div>
-<input type = "text" name = "location" style="100px" value = "<?php echo $location2; ?>">
+<input type = "text" name = "location" style="100px" value = "<?php echo $pi_id; ?>">
 
 
 

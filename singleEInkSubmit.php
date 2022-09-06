@@ -17,11 +17,12 @@ $check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
 $result = db_query($check_query);
 
 while($row = $result->fetch_assoc()){
-  $name2 = $row['faculty_name'];
-  $file_path2 = $row['file_path'];
+  $name2 = $row['name'];
+  $file_path2 = $row['image_path'];
   $location2 = $row['location'];
   $message2 = $row['message'];
   $title2 = $row['title'];
+  $pi_id = $row['pi_id'];
   
 }
 
@@ -88,13 +89,15 @@ else {
 
 
 
-$php_name= $_POST[faculty_name];
+$php_name= $_POST[name];
 
 $php_title= $_POST[title];
 
 $php_message= $_POST[message];
 
 $php_location= $_POST[location];
+
+$php_pi_id= $_POST[pi_id]
 
 $blank = "";
 
@@ -121,14 +124,19 @@ if (strcmp($php_location, $blank) == 0) {
 	$php_location = $location2;
 } 
 
+if (strcmp($php_pi_id, $blank) == 0) {
 
-$query = "UPDATE eink_messages SET faculty_name = \"" .$php_name. "\",  title = \"" .$php_title. "\",  message = \"".$php_message. "\", location =  \"".$php_location."\", file_path = \"".$target_file."\" WHERE id =".db_quote($php_id);
+	$php_pi_id = $pi_id;
+} 
+
+
+$query = "UPDATE display SET name = \"" .$php_name. "\",  title = \"" .$php_title. "\",  message = \"".$php_message. "\", location =  \"".$php_location."\", image_path = \"".$target_file."\" WHERE id =".db_quote($php_id);
 
 db_query($query);
 
-$imgHashQuery = "UPDATE image_hashes SET hash = \"" .$imgHash. "\" WHERE id =".db_quote($php_id);
+//$imgHashQuery = "UPDATE image_hashes SET hash = \"" .$imgHash. "\" WHERE id =".db_quote($php_id);
 
-db_query($imgHashQuery);
+//db_query($imgHashQuery);
 
 
 
