@@ -71,7 +71,7 @@ else
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" && $imageFileType != "") {
   $target_file= $file_path2;
-  header("Location: singleEInkForm.php");
+  header("Location: officesign_dashboard.php");
   $uploadOk = 0;
 }
 
@@ -133,7 +133,7 @@ if (empty($php_pi_id) == 0) {
 } 
 
 
-$query = "UPDATE display SET name = \"" .$php_name. "\",  title = \"" .$php_title. "\",  message = \"".$php_message. "\", location =  \"".$php_location."\", image_path = \"".$target_file."\" WHERE id =".db_quote($php_id);
+$query = "UPDATE display SET name = \"" .$php_name. "\",  title = \"" .$php_title. "\",  message = \"".$php_message. "\", location =  \"".$php_location."\", image_path = \"".$target_file."\", pi_id = \"".$php_pi_id."\" WHERE id =".db_quote($php_id);
 
 db_query($query);
 
