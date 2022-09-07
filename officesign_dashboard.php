@@ -152,7 +152,7 @@ while($row = $result->fetch_assoc()){
 	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
 	 </form>
 </div>
-<input type = "text" name = "location" style="100px" value = "<?php echo $pi_id; ?>">
+<input type = "text" name = "pi_id" style="100px" value = "<?php echo $pi_id; ?>">
 
 
 
