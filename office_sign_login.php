@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <body>
     <div class="wrapper">
-        <h1>Login</h1>
+        <h1>Office Sign Login</h1>
         <p>Please fill in your credentials to login.</p>
 
         <?php 
