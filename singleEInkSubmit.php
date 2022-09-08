@@ -93,41 +93,40 @@ else {
 
 
 
-$php_name= $_POST["name"];
+$php_name= $_POST['name'];
 
-$php_title= $_POST["title"];
+$php_title= $_POST['title'];
 
-$php_message= $_POST["message"];
+$php_message= $_POST['message'];
 
-$php_location= $_POST["location"];
+$php_location= $_POST['location'];
 
-$php_pi_id= $_POST["pi_id"];
+$php_pi_id= $_POST['pi_id'];
 
 
 $base_directory = "images/einkimages/";
 
-
-if (empty($php_name) == 0) {
+if (strcmp($php_name, $blank) == 0) {
 
 	$php_name = $name2;
 }
 
-if (empty($php_message) == 0) {
+if (strcmp($php_message, $blank) == 0) {
 
 	$php_message = $message2;
 }
 
-if (empty($php_title) == 0) {
+if (strcmp($php_title, $blank) == 0) {
 
 	$php_title = $title2;
 }
 
-if (empty($php_location) == 0) {
+if (strcmp($php_location, $blank) == 0) {
 
 	$php_location = $location2;
 } 
 
-if (empty($php_pi_id) == 0) {
+if (strcmp($php_pi_id, $blank) == 0) {
 
 	$php_pi_id = $pi_id;
 } 
