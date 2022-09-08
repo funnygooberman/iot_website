@@ -93,15 +93,15 @@ else {
 
 
 
-$php_name= $_POST[name];
+$php_name= $_POST["name"];
 
-$php_title= $_POST[title];
+$php_title= $_POST["title"];
 
-$php_message= $_POST[message];
+$php_message= $_POST["message"];
 
-$php_location= $_POST[location];
+$php_location= $_POST["location"];
 
-$php_pi_id= $_POST[pi_id];
+$php_pi_id= $_POST["pi_id"];
 
 
 $base_directory = "images/einkimages/";
