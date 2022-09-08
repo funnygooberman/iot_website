@@ -89,6 +89,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
+    $query = "INSERT INTO display_data (userID) VALUES (SELECT id FROM users WHERE username = username";
+    db_query($query);
     
     // Close connection
     mysqli_close($link);
