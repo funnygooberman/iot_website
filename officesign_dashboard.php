@@ -12,12 +12,6 @@ $php_id = $_SESSION["id"];
 $check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
 $result = db_query($check_query);
 
-$name2 = "";
-$file_path2="";
-$location2="";
-$message2="";
-$title2="";
-$pi_id="";
 
 while($row = $result->fetch_assoc()){
     $name2 = $row['name'];
