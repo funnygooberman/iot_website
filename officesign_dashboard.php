@@ -132,17 +132,17 @@ while($row = $result->fetch_assoc()){
 <div class = "backG"> 
 	<form action="singleEInkSubmit.php" align = "center" method="post" enctype="multipart/form-data">
 	
-	  <input class="absolute" type="text2" name="name" style="width: 500px" value = "<?php echo $name2; ?>" >
-           <div class="absolute2"> <input type = "text" name="title" style="width 200px" value = "<?php echo $title2; ?>" ></div>
-	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message"> <?php echo $message2; ?> </textarea></div>
-	  <div class="absolute4"> <input type = "text" name = "location" style="100px" value = "<?php echo $location2; ?>" ></div>
+	  <input class="absolute" type="text2" name="name" style="width: 500px" placeholder="Name" value = "<?php echo $name2; ?>" >
+           <div class="absolute2"> <input type = "text" name="title" placeholder="Title" style="width 200px" value = "<?php echo $title2; ?>" ></div>
+	  <div class="absolute3"> <textarea rows = "23" cols = "56" name = "message" placeholder="Main Message"> <?php echo $message2; ?> </textarea></div>
+	  <div class="absolute4"> <input type = "text" name = "location" style="100px" placeholder="Rm #"value = "<?php echo $location2; ?>" ></div>
 	  <div class="absolute5"> 
 		<img src="<?php echo $file_path2 ?>" alt="Upload an image!"  style="height: 300%; width: 140%;"> 
 		<br>
 		<input type="file" name="fileToUpload" id="fileToUpload" hidden/>
 		<label class="button2" for="fileToUpload">Choose File</label>
            </div>
-	  <input type = "text" name = "pi_id" style="100px" value = "<?php echo $pi_id; ?>">
+	  <input type = "text" name = "pi_id" placeholder="Pi ID" style="100px" value = "<?php echo $pi_id; ?>">
 	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
 	 </form>
 </div>
