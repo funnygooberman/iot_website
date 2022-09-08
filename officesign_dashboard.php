@@ -78,7 +78,7 @@ while($row = $result->fetch_assoc()){
 	div.absolute6 {
 	  position: absolute;
 	  top: 100%;
-	  left: 15%;
+	  left: 5%;
 	  width: 70%;
 	}	
 	div.absolute7 {
