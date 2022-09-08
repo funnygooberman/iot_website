@@ -82,6 +82,13 @@ while($row = $result->fetch_assoc()){
 	  width: 10%;
 	  height: 10%;
 	}	
+	div.absolute7 {
+	  position: absolute;
+	  top: 120%;
+	  left: 15%;
+	  width: 10%;
+	  height: 10%;
+	}	
 
 	.alert {
 	  padding: 20px;
@@ -142,8 +149,8 @@ while($row = $result->fetch_assoc()){
 		<input type="file" name="fileToUpload" id="fileToUpload" hidden/>
 		<label class="button2" for="fileToUpload">Choose File</label>
            </div>
-	  <input type = "text" name = "pi_id" placeholder="Pi ID" style="100px" value = "<?php echo $pi_id; ?>">
-	  <div class="absolute6"><button class = "button" type="submit">Submit</button></div> 
+	  <div class="absolute7"><button class = "button" type="submit">Submit</button></div> 
+	  <div class="absolute6"> <input type = "text" name = "pi_id" placeholder="Pi ID" style="100px" value = "<?php echo $pi_id; ?>"></div>
 	 </form>
 </div>
 
