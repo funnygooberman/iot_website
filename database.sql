@@ -15,7 +15,7 @@ CREATE TABLE display_data (
     title varchar(100),
     userID int,
     pi_id VARCHAR(100),
-    PRIMARY KEY (pi_id),
+    PRIMARY KEY (userID),
     FOREIGN KEY (userID) REFERENCES users(id),
     FOREIGN KEY (pi_id) REFERENCES displays (pi_id)
 );
