@@ -13,8 +13,7 @@
 	//query for bluetooth table Pi Locations------------------------------------
     	$query = "SELECT * FROM display_data";
     
-    	$result = $connection->query($query)
-    	   or die("Error: ".$connection->error);    
+    	$result = db_select($query); 
     
     while($row = $result->fetch_assoc()){
       $idp[] = $row['pi_id'];
