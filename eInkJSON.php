@@ -13,15 +13,15 @@
 	//query for bluetooth table Pi Locations------------------------------------
     	$query = "SELECT * FROM display_data";
     
-    	$result = db_select($query); 
+    	$result = db_query($query); 
     
     while($row = $result->fetch_assoc()){
-      $idp[] = $row['pi_id'];
       $fname[] = $row['name'];
-      $Title[] = $row['title'];
-      $Message[] = $row['message'];
-      $Location[] = $row['location'];
       $fpath[] = $row['image_path'];
+      $Location[] = $row['location'];
+      $Message[] = $row['message'];
+      $Title[] = $row['title'];
+      $idp[] = $row['pi_id'];
     }
 	
     $result = array();
