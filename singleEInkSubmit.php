@@ -103,6 +103,8 @@ $php_location= $_POST['location'];
 
 $php_pi_id= $_POST['pi_id'];
 
+$blank = "";
+
 
 $base_directory = "images/einkimages/";
 

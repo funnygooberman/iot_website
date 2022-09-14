@@ -31,4 +31,6 @@ CREATE TABLE admins (
     PRIMARY KEY (admin_id)
 );
 
+CREATE TABLE pi_data (
 
+);
