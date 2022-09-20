@@ -1,78 +1,39 @@
 <?php
-// Initialize the session
-session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: officesign_dashboard.php");
-    exit;
-}
- 
 // Include config file
 require_once "database.php";
  
 // Define variables and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = $login_err = "";
+$username = $password = $confirm_password = "";
+$username_err = $password_err = $confirm_password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
+    // Validate username
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Please enter a username.";
+    } elseif(!preg_match('/^[a-zA-Z0-9.]+$/', trim($_POST["username"]))){
+        $username_err = "Username can only contain letters, numbers, and periods.";
     } else{
-        $username = trim($_POST["username"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-    
-    // Validate credentials
-    if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT id FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
             // Set parameters
-            $param_username = $username;
+            $param_username = trim($_POST["username"]);
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                // Store result
+                /* store result */
                 mysqli_stmt_store_result($stmt);
                 
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
-                            session_start();
-                            
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            // Redirect user to welcome page
-                            header("location: officesign_dashboard.php");
-                        } else{
-                            // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password.";
-                        }
-                    }
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $username_err = "This username is already taken.";
                 } else{
-                    // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
+                    $username = trim($_POST["username"]);
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -83,18 +44,66 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     
+    // Validate password
+    if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter a password.";     
+    } elseif(strlen(trim($_POST["password"])) < 6){
+        $password_err = "Password must have atleast 6 characters.";
+    } else{
+        $password = trim($_POST["password"]);
+    }
+    
+    // Validate confirm password
+    if(empty(trim($_POST["confirm_password"]))){
+        $confirm_password_err = "Please confirm password.";     
+    } else{
+        $confirm_password = trim($_POST["confirm_password"]);
+        if(empty($password_err) && ($password != $confirm_password)){
+            $confirm_password_err = "Password did not match.";
+        }
+    }
+    
+    // Check input errors before inserting in database
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+        
+        // Prepare an insert statement
+        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+         
+        if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            
+            // Set parameters
+            $param_username = $username;
+            $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                // Redirect to login page
+                header("location: office_sign_login.php");
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
+    $query = "INSERT INTO display_data (userID) SELECT id FROM users WHERE username='$username'";
+    db_query($query);
+    
     // Close connection
     mysqli_close($link);
 }
 ?>
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Tue Sep 20 2022 21:28:29 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="632a2694f17249dced877a2c" data-wf-site="632a181108141a036b8932b7">
+<html data-wf-page="632a2ebe8485e97018c7dbd7" data-wf-site="632a181108141a036b8932b7">
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
-  <meta content="Login" property="og:title">
-  <meta content="Login" property="twitter:title">
+  <title>Register</title>
+  <meta content="Register" property="og:title">
+  <meta content="Register" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -105,7 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
 </head>
-<body class="body-2">
+<body class="body-3">
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-logo-left-container shadow-three w-nav">
     <div class="container">
       <div class="navbar-wrapper">
@@ -113,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
           <ul role="list" class="nav-menu-two w-list-unstyled">
             <li>
-              <a href="#" class="nav-link">Home</a>
+              <a href="http://index.hml" class="nav-link">Home</a>
             </li>
             <li>
               <a href="#" class="nav-link">About</a>
@@ -139,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <div class="nav-divider"></div>
             </li>
             <li class="mobile-margin-top-10">
-              <a href="#" class="button-primary w-button">Login</a>
+              <a href="http://login.php" class="button-primary w-button">Login</a>
             </li>
           </ul>
         </nav>
@@ -150,18 +159,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
   </div>
   <div class="w-form">
-  <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-    <form id="wf-form-Login-Form" name="wf-form-Login-Form" data-name="Login Form" method="post" class="form form-2 form-3">
-      <h1 class="heading-2">Login</h1>
+    <form id="wf-form-Login-Form" name="wf-form-Login-Form" data-name="Login Form" redirect="login.php" data-redirect="login.php" method="post" class="form form-2 form-3">
+      <h1 class="heading-2">Register</h1>
       <label for="username" class="field-label-2">Username</label>
-      <input type="text" class="text-field w-input form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" maxlength="256" name="username" data-name="Username" placeholder="Enter your username" id="username">
-      <label for="password" class="field-label">Password</label>
-      <input type="password" class="text-field-2 w-input form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" maxlength="256" name="password" data-name="Password" placeholder="Enter your password" id="password" required="">
-      <input type="submit" value="Login" data-wait="Please wait..." class="submit-button w-button">
+      <input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter your username" id="name">
+      <label for="email" class="field-label">Password</label>
+      <input type="password" class="text-field-2 w-input" maxlength="256" name="email" data-name="Email" placeholder="Enter your password" id="email" required="">
+      <label for="field" class="field-label-3">Confirm Password</label><input type="password" class="text-field-3 text-field-4 w-input" maxlength="256" name="field" data-name="Field" placeholder="Example Text" id="field" required="">
       <a href="#" class="button w-button">Register</a>
     </form>
     <div class="w-form-done">

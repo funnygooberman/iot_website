@@ -441,9 +441,12 @@
 }
 
 .form-3 {
-  margin-top: 220px;
+  margin-top: 119px;
   margin-right: auto;
   margin-left: auto;
+  padding: 10px;
+  border: 5px solid #4560f3;
+  border-radius: 10px;
 }
 
 .field-label {
@@ -458,11 +461,12 @@
 
 .text-field {
   background-color: #414141;
-  color: #707070;
+  color: #fffcfc;
 }
 
 .text-field-2 {
   background-color: #414141;
+  color: #fff;
 }
 
 .submit-button {
@@ -470,8 +474,37 @@
 }
 
 .button {
-  margin-left: 40px;
+  margin-left: 1px;
+  padding-left: 15px;
   background-color: #4560f3;
+}
+
+.heading {
+  position: relative;
+  left: 351px;
+  bottom: -215px;
+  color: #fff9f9;
+}
+
+.heading-2 {
+  color: #fff;
+}
+
+.body-3 {
+  background-color: #707070;
+}
+
+.text-field-3 {
+  background-color: #414141;
+  color: #707070;
+}
+
+.field-label-3 {
+  color: #fffcfc;
+}
+
+.text-field-4 {
+  color: #fff;
 }
 
 @media screen and (max-width: 991px) {
