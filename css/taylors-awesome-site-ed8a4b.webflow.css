@@ -9,8 +9,8 @@
 }
 
 .navbar-logo-left-container.shadow-three {
-  width: 100%;
-  max-width: 1140px;
+  width: auto;
+  max-width: none;
   margin-bottom: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -99,6 +99,9 @@
 .nav-dropdown-toggle {
   position: relative;
   padding: 5px 30px 5px 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: #000;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.25px;
@@ -146,7 +149,9 @@
 
 .nav-dropdown-list.shadow-three.mobile-shadow-hide {
   position: absolute;
-  border: 2px solid #000;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fffcfc;
   background-color: #4560f3;
   color: #fff;
   background-clip: border-box;
@@ -507,6 +512,91 @@
   color: #fff;
 }
 
+.body-4 {
+  background-color: #707070;
+}
+
+.form-4 {
+  margin-top: 100px;
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.heading-3 {
+  color: #fff;
+}
+
+.field-label-4 {
+  color: #fff6f6;
+}
+
+.field-label-5 {
+  color: #fffcfc;
+}
+
+.field-label-6 {
+  color: #fffefe;
+}
+
+.field-label-7 {
+  color: #fffdfd;
+}
+
+.text-field-5 {
+  margin-right: 0px;
+  background-color: #414141;
+}
+
+.field-label-8 {
+  color: #fff;
+}
+
+.field-label-9 {
+  margin-top: 6px;
+  padding-bottom: 0px;
+  color: #fff;
+}
+
+.button-2 {
+  background-color: #4560f3;
+}
+
+.submit-button-2 {
+  background-color: #4560f3;
+}
+
+.text-field-6 {
+  background-color: #414141;
+}
+
+.text-field-7 {
+  background-color: #414141;
+}
+
+.textarea {
+  height: auto;
+  background-color: #414141;
+  line-height: 20px;
+  -webkit-column-count: auto;
+  column-count: auto;
+  white-space: normal;
+  -o-object-fit: fill;
+  object-fit: fill;
+}
+
+.text-field-8 {
+  background-color: #414141;
+}
+
+.text-field-9 {
+  background-color: #414141;
+}
+
+.form-block {
+  -webkit-column-count: auto;
+  column-count: auto;
+}
+
 @media screen and (max-width: 991px) {
   .container {
     max-width: 728px;
@@ -676,6 +766,11 @@
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
+    background-color: #4560f3;
+  }
+
+  .nav-dropdown-list.shadow-three.mobile-shadow-hide.w--open {
+    border-color: #fffefe;
   }
 
   .centered-heading {
