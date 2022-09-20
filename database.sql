@@ -16,7 +16,7 @@ CREATE TABLE display_data (
     userID int,
     pi_id VARCHAR(100),
     PRIMARY KEY (userID),
-    FOREIGN KEY (userID) REFERENCES users(id)
+    FOREIGN KEY (userID) REFERENCES users(id),
 );
 
 CREATE TABLE displays (
