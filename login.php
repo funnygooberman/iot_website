@@ -162,14 +162,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <label for="password" class="field-label">Password</label>
       <input type="password" class="text-field-2 w-input form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" maxlength="256" name="password" data-name="Password" placeholder="Enter your password" id="password" required="">
       <input type="submit" value="Login" data-wait="Please wait..." class="submit-button w-button">
-      <a href="#" class="button w-button">Register</a>
+      <a href="registerNew.php" class="button w-button">Register</a>
     </form>
-    <div class="w-form-done">
-      <div>Thank you! Your submission has been received!</div>
-    </div>
-    <div class="w-form-fail">
-      <div>Oops! Something went wrong while submitting the form.</div>
-    </div>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>

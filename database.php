@@ -2,7 +2,7 @@
     /* Database credentials. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
     define("_DB_SERVERNAME", "localhost");
-    define("_DB_NAME", "iotcapstone_backend");
+    define("_DB_NAME", "iotcapst_backend");
     define("_DB_USERNAME", "root");
     define("_DB_PASSWORD", "C00lbe@ns2014!!");
 
