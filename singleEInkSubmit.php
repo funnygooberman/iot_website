@@ -5,7 +5,7 @@
      
     // Check if the user is logged in, if not then redirect him to login page
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header("location: office_sign_login.php");
+        header("location: login.php");
         exit;
     }
     
@@ -156,5 +156,5 @@ $timeDate = date('m/d/Y h:i:s a', time());
 
 $_SESSION['message'] = $_SESSION['message'] . $timeDate;
 
-header("Location: officesign_dashboard.php");
+header("Location: dashboard.php");
 ?>
