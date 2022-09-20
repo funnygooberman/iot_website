@@ -75,7 +75,7 @@ while($row = $result->fetch_assoc()){
               <div class="nav-divider"></div>
             </li>
             <li class="mobile-margin-top-10">
-              <a href="#" class="button-primary w-button">Logout</a>
+              <a href="logout.php" class="button-primary w-button">Logout</a>
             </li>
           </ul>
         </nav>
