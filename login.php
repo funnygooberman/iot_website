@@ -155,7 +155,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
         }        
         ?>
-    <form id="wf-form-Login-Form" name="wf-form-Login-Form" data-name="Login Form" method="post" class="form form-2 form-3">
+    <form id="wf-form-Login-Form" name="wf-form-Login-Form" method="post" class="form form-2 form-3">
       <h1 class="heading-2">Login</h1>
       <label for="username" class="field-label-2">Username</label>
       <input type="text" class="text-field w-input form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" maxlength="256" name="username" data-name="Username" placeholder="Enter your username" id="username">
