@@ -161,7 +161,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <input type="text" class="text-field w-input form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" maxlength="256" name="username" data-name="Username" placeholder="Enter your username" id="username">
       <label for="password" class="field-label">Password</label>
       <input type="password" class="text-field-2 w-input form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" maxlength="256" name="password" data-name="Password" placeholder="Enter your password" id="password" required="">
-      <input type="submit" value="Login" data-wait="Please wait..." class="submit-button w-button">
+      <input type="submit" value="Login" class="submit-button w-button">
       <a href="register.php" class="button w-button">Register</a>
     </form>
   </div>
