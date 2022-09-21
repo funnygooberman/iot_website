@@ -567,15 +567,18 @@
 
 .text-field-6 {
   background-color: #414141;
+  color: #fff;
 }
 
 .text-field-7 {
   background-color: #414141;
+  color: #fff;
 }
 
 .textarea {
   height: auto;
   background-color: #414141;
+  color: #fff;
   line-height: 20px;
   -webkit-column-count: auto;
   column-count: auto;
@@ -590,9 +593,11 @@
 
 .text-field-9 {
   background-color: #414141;
+  color: #fff;
 }
 
 .form-block {
+  color: #fff;
   -webkit-column-count: auto;
   column-count: auto;
 }
@@ -624,7 +629,7 @@
     -ms-flex-align: center;
     align-items: center;
     border-radius: 50px;
-    background-color: #fff;
+    background-color: #4560f3;
     box-shadow: 0 8px 50px 0 rgba(0, 0, 0, 0.05);
   }
 
@@ -686,6 +691,7 @@
     -ms-flex-direction: column;
     flex-direction: column;
     border-radius: 20px;
+    background-color: #4560f3;
   }
 
   .nav-link {
@@ -746,6 +752,10 @@
     margin-top: 10px;
   }
 
+  .menu-button {
+    background-color: #4560f3;
+  }
+
   .hero-heading-center {
     padding: 60px 15px;
   }
@@ -775,5 +785,11 @@
 
   .centered-heading {
     margin-bottom: 24px;
+  }
+
+  .form-block {
+    margin-right: -184px;
+    margin-left: -192px;
+    padding-left: 0px;
   }
 }
