@@ -170,7 +170,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <label for="confirm_password" class="field-label-3">Confirm Password</label>
       <input type="password" class="text-field-3 text-field-4 w-input form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" maxlength="256" name="confirm_password" data-name="Confirm_Password" placeholder="Confirm Password" id="confirm_password" required="">
       <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-      <a href="#" class="button w-button">Register</a>
+      <input type="submit" class="button" value="Register" class="button w-button">
     </form>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
