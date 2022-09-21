@@ -97,7 +97,7 @@ while($row = $result->fetch_assoc()){
       <label for="location" class="field-label-7">Room Number</label>
       <input type="text" class="text-field-8 w-input" maxlength="256" name="location" placeholder="Ex. 1A23" id="location" value = "<?php echo $location2; ?>">
       <label for="image" class="field-label-8">Image Upload</label>
-      <img src="<?php echo $file_path2 ?>" alt="Upload an image!"  style="height: 300%; width: 140%;">
+      <img src="<?php echo $file_path2 ?>" alt="Upload an image!"  style="height: 50%; width: 25%;">
       <input type="file" name="fileToUpload" id="fileToUpload" hidden/>
       <label class="button-2 w-button" for="fileToUpload">Upload Image</label>
       <label for="pi_id" class="field-label-9">PI ID</label>
