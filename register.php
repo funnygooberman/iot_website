@@ -125,10 +125,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="#" class="nav-link">About</a>
+              <a href="development.html" class="nav-link">About</a>
             </li>
             <li>
-              <a href="#" class="nav-link">Contact</a>
+              <a href="development.html" class="nav-link">Contact</a>
             </li>
             <li>
               <div data-hover="true" data-delay="0" class="nav-dropdown w-dropdown">
@@ -137,9 +137,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <div class="text-block">Services</div>
                 </div>
                 <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
                   <div class="w-container"></div>
                 </nav>
               </div>

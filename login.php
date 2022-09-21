@@ -109,17 +109,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar-logo-left-container shadow-three w-nav">
     <div class="container">
       <div class="navbar-wrapper">
-        <a href="#" class="navbar-brand w-nav-brand"><img src="images/USAFA-IOT-logos_transparent.png" loading="lazy" srcset="images/USAFA-IOT-logos_transparent.png 500w, images/USAFA-IOT-logos_transparent.png 957w" sizes="100vw" alt=""></a>
+        <a href="index.html" class="navbar-brand w-nav-brand"><img src="images/USAFA-IOT-logos_transparent.png" loading="lazy" srcset="images/USAFA-IOT-logos_transparent.png 500w, images/USAFA-IOT-logos_transparent.png 957w" sizes="100vw" alt=""></a>
         <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
           <ul role="list" class="nav-menu-two w-list-unstyled">
             <li>
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="#" class="nav-link">About</a>
+              <a href="development.html" class="nav-link">About</a>
             </li>
             <li>
-              <a href="#" class="nav-link">Contact</a>
+              <a href="development.html" class="nav-link">Contact</a>
             </li>
             <li>
               <div data-hover="true" data-delay="0" class="nav-dropdown w-dropdown">
@@ -128,9 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <div class="text-block">Services</div>
                 </div>
                 <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
-                  <a href="#" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
+                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
                   <div class="w-container"></div>
                 </nav>
               </div>
