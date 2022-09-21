@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
           <ul role="list" class="nav-menu-two w-list-unstyled">
             <li>
-              <a href="http://index.html" class="nav-link">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
               <a href="#" class="nav-link">About</a>
@@ -148,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <div class="nav-divider"></div>
             </li>
             <li class="mobile-margin-top-10">
-              <a href="http://login.php" class="button-primary w-button">Login</a>
+              <a href="login.php" class="button-primary w-button">Login</a>
             </li>
           </ul>
         </nav>
