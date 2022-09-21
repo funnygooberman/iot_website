@@ -71,7 +71,7 @@ else
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" && $imageFileType != "") {
   $target_file= $file_path2;
-  header("Location: officesign_dashboard.php");
+  header("Location: dashboard.php");
   $uploadOk = 0;
 }
 
@@ -86,7 +86,7 @@ if ($uploadOk == 0) {
 else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
   } else {
-	header("Location: officesign_dashboard.php");
+	header("Location: dashboard.php");
   }
 }
 
