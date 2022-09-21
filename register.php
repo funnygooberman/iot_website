@@ -159,7 +159,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
   </div>
   <div class="w-form">
-    <form id="wf-form-Login-Form" name="wf-form-Login-Form" data-name="Login Form" redirect="login.php" data-redirect="login.php" method="post" class="form form-2 form-3">
+    <form action="register.php" id="wf-form-Login-Form" name="wf-form-Login-Form" redirect="login.php" data-redirect="login.php" method="post" class="form form-2 form-3">
       <h1 class="heading-2">Register</h1>
       <label for="username" class="field-label-2">Username</label>
       <input type="text" class="text-field w-input form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" maxlength="256" name="username" data-name="Username" placeholder="Enter your username" id="username">
