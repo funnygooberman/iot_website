@@ -85,26 +85,8 @@ while($row = $result->fetch_assoc()){
       </div>
     </div>
   </div>
-  <div class="form-block w-form">
-    <form  action="singleEInkSubmit.php" method="post" class="form-4" enctype="multipart/form-data">
-      <h1 class="heading-3">Office Sign Configuration</h1>
-      <label for="name" class="field-label-4">Name</label>
-      <input type="text" class="text-field-6 w-input" maxlength="256" name="name" data-name="Name" placeholder="Ex. John Smith" id="name" value = "<?php echo $name2; ?>">
-      <label for="title" class="field-label-5">Title</label>
-      <input type="text" class="text-field-7 w-input" maxlength="256" name="title" data-name="Title" placeholder="Ex. CEO of Company " id="title" value = "<?php echo $title2; ?>">
-      <label for="message" class="field-label-6">Message</label>
-      <textarea placeholder="Ex. Monday - Work" maxlength="5000" id="message" name="message" class="textarea w-input"><?php echo $message2; ?></textarea>
-      <label for="location" class="field-label-7">Room Number</label>
-      <input type="text" class="text-field-8 w-input" maxlength="256" name="location" placeholder="Ex. 1A23" id="location" value = "<?php echo $location2; ?>">
-      <label for="image" class="field-label-8">Image Upload</label>
-      <img src="<?php echo $file_path2 ?>" alt="Upload an image!"  style="height: 50%; width: 25%;">
-      <input type="file" name="fileToUpload" id="fileToUpload" hidden/>
-      <label class="button-2 w-button" for="fileToUpload">Upload Image</label>
-      <label for="pi_id" class="field-label-9">PI ID</label>
-      <input type="pi_id" class="text-field-9 w-input" maxlength="256" name="pi_id"  placeholder="Ex. rpi-1A23" id="pi_id" value = "<?php echo $pi_id; ?>">
-      <input type="submit" value="Submit" class="submit-button-2 w-button">
-    </form>
-    
+  <div class="w-header">
+    <p> Admin Page </p>
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
