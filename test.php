@@ -20,6 +20,7 @@ while($row = $result->fetch_assoc()){
 
   foreach($timestamps as $item) {
     $difference_in_seconds = strtotime($date) - strtotime($item);
+    (int) $difference_in_seconds;
     echo "\n";
     echo $difference_in_seconds;
     if ($different_in_seconds > 350) {
