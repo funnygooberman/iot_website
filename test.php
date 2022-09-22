@@ -10,6 +10,7 @@ $check_query = "SELECT timestamp FROM pi_ping_data";
 $result = db_query($check_query);
 $num_online = 0;
 $num_offline = 0;
+$date = date('Y-m-d H:i:s');
 
 
 
@@ -18,9 +19,9 @@ while($row = $result->fetch_assoc()){
   }
 
   foreach($timestamps as $item) {
-    echo $item;
-    $date = date('Y-m-d H:i:s');
     $difference_in_seconds = strtotime($date) - strtotime($item);
+    echo "\n";
+    echo $difference_in_seconds;
     if ($different_in_seconds > 350) {
       $num_offline = $num_offline + 1;
     }
