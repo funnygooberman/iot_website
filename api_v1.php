@@ -11,6 +11,7 @@
     if($api_key == "12345") {
         $api_function = isset($_POST['api_function']) ? $_POST["api_function"]: $hostname = "";
         if ($api_function == "ping") {
+            echo "\n";
             echo "Correct function: ";
             echo $api_function;
             ping_func();
@@ -43,6 +44,7 @@
         ip_addr = \"" .$ip_addr. "\", 
         timestamp = \"" .$timestamp. "\", 
         payload = \"" .$payload. "\"";
+        dbquery($query);
     }
         
 
