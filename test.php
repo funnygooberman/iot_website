@@ -10,6 +10,11 @@ $check_query = "SELECT * FROM pi_ping_data";
 $result = db_query($check_query);
 $num_online = 0;
 $num_offline = 0;
+echo "Hello \n";
+echo "num_online: ";
+echo $num_online;
+echo "\n num_offline: ";
+echo $num_offline;
 
 
 while($row = $result->fetch_assoc()){
