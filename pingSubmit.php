@@ -7,7 +7,7 @@
 
     //$apiKey = $_GET["apiKey"];
     //echo "API KEY = " . $apiKey;
-        echo "hi";
+        print_r($_POST);
         $hostname = isset($_POST["hostname"]) ? $_POST["hostname"]: $hostname = "";
         $network = isset($_POST["network"]) ? $_POST["network"]: $network = "";
         $ip_addr = isset($_POST["ip"]) ? $_POST["ip"]: $ip_addr = "";
