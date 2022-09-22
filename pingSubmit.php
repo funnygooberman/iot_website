@@ -7,8 +7,13 @@
 
     //$apiKey = $_GET["apiKey"];
     //echo "API KEY = " . $apiKey;
-
+    if(isset($_POST['hostname'])) {
         $hostname = $_POST['hostname'];
+    }
+    else {
+        echo "No hostname provided";
+    }
+        
         $network = $_POST['network'];
         $ip_addr = $_POST['ip'];
         $timestamp = $_POST['timestamp'];
@@ -22,5 +27,6 @@
         }
         $query2 = "UPDATE pi_ping_data SET hostname = \"" .$hostname. "\", network = \"" .$network. "\", ip_addr = \"" .$ip_addr. "\", timestamp = \"" .$timestamp. "\", payload = \"" .$payload. "\" WHERE hostname = \"" .$hostname. "\"";
         db_query($query2);
+
 
 ?>
