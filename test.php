@@ -11,6 +11,7 @@ $result = db_query($check_query);
 $num_online = 0;
 $num_offline = 0;
 $date = date('Y-m-d H:i:s');
+$difference = 350;
 
 
 
@@ -23,7 +24,7 @@ while($row = $result->fetch_assoc()){
     (int) $difference_in_seconds;
     echo "\n";
     echo $difference_in_seconds;
-    if ($different_in_seconds > 350) {
+    if ($different_in_seconds > $difference) {
         echo "\n";
         echo "One offline!";
       $num_offline = $num_offline + 1;
