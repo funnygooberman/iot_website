@@ -5,6 +5,7 @@
 	// Initialize the session
     session_start();
     print_r($_POST);
+    echo "Hello pi";
     $api_key = $hostname = isset($_POST['api_key']) ? $_POST["api_key"]: $hostname = "";
 
     if($api_key == "12345") {
@@ -16,7 +17,6 @@
             echo "Incorrect function";
         }
     }
-
     else {
         echo "Incorrect API Key";
     }
