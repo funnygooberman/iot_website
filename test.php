@@ -24,7 +24,7 @@ while($row = $result->fetch_assoc()){
     (int) $difference_in_seconds;
     echo "\n";
     echo $difference_in_seconds;
-    if ($different_in_seconds > $difference) {
+    if ($difference_in_seconds > $difference) {
         echo "\n";
         echo "One offline!";
         $num_offline = $num_offline + 1;
