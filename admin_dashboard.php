@@ -26,12 +26,9 @@ while($row = $result->fetch_assoc()){
     $difference_in_seconds = strtotime($date) - strtotime($item);
     (int) $difference_in_seconds;
     if ($difference_in_seconds > 350) {
-        echo "\n";
-        echo "One offline!";
         $num_offline = $num_offline + 1;
     }
     else {
-        echo "One online!";
       $num_online = $num_online + 1;
     }
   }
