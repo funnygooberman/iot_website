@@ -4,7 +4,7 @@
     define("_DB_SERVERNAME", "localhost");
     define("_DB_NAME", "iotcapst_backend");
     define("_DB_USERNAME", "root");
-    define("_DB_PASSWORD", "C00lbe@ns2024!!");
+    define("_DB_PASSWORD", "C00lbe@ns2014!!");
 
     $link = mysqli_connect(_DB_SERVERNAME, _DB_USERNAME, _DB_PASSWORD, _DB_NAME);
 
