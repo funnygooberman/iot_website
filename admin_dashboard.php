@@ -13,7 +13,9 @@ $php_id = $_SESSION["admin_id"];
 $check_query = "SELECT * FROM pi_ping_data";
 $result = db_query($check_query);
 $num_pi_query = "SELECT COUNT(*) FROM pi_ping_data"; 
-$num_pi = db_query($num_pi_query);
+$num_pi_result = db_query($num_pi_query);
+$num_pi_row = $num_pi_result->fetch_assoc();
+$num_pi = $num_pi_row['COUNT(*)'];
 $num_offline = 0;
 
 
