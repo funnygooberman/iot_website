@@ -2,9 +2,9 @@
     /* Database credentials. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
     define("_DB_SERVERNAME", "localhost");
-    define("_DB_NAME", "iotcapstone_backend");
-    define("_DB_USERNAME", "iotcapstone_user");
-    define("_DB_PASSWORD", "C00lbe@ns2022!!");
+    define("_DB_NAME", "iotcapst_backend");
+    define("_DB_USERNAME", "root");
+    define("_DB_PASSWORD", "C00lbe@ns2024!!");
 
     $link = mysqli_connect(_DB_SERVERNAME, _DB_USERNAME, _DB_PASSWORD, _DB_NAME);
 

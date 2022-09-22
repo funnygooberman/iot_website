@@ -31,6 +31,11 @@ CREATE TABLE admins (
     PRIMARY KEY (admin_id)
 );
 
-CREATE TABLE pi_data (
-
+CREATE TABLE pi_ping_data (
+    hostname VARCHAR(100),
+    network  VARCHAR(100),
+    ip_addr  VARCHAR(100),
+    timestamp VARCHAR(100),
+    payload   VARCHAR(100),
+    PRIMARY KEY (hostname)
 );
