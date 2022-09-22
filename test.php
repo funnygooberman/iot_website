@@ -23,6 +23,8 @@ while($row = $result->fetch_assoc()){
     echo "\n";
     echo $difference_in_seconds;
     if ($different_in_seconds > 350) {
+        echo "\n";
+        echo "One offline!";
       $num_offline = $num_offline + 1;
     }
     else {
