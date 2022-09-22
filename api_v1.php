@@ -44,7 +44,7 @@
         ip_addr = \"" .$ip_addr. "\", 
         timestamp = \"" .$timestamp. "\", 
         payload = \"" .$payload. "\"";
-        dbquery($query);
+        db_query($query);
     }
         
 
