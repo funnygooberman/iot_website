@@ -7,11 +7,11 @@
 
     //$apiKey = $_GET["apiKey"];
     //echo "API KEY = " . $apiKey;
-        $hostname = isset($_POST["hostname"]) ? $_POST["hostname"];
-        $network = isset($_POST["network"]) ? $_POST["network"];
-        $ip_addr = isset($_POST["ip"]) ? $_POST["ip"];
-        $timestamp = isset($_POST["timestamp"]) ? $_POST["timestamp"];
-        $payload = isset($_POST["payload"]) ? $_POST["payload"];
+        $hostname = isset($_POST["hostname"]) ? $_POST["hostname"]: $hostname = "";
+        $network = isset($_POST["network"]) ? $_POST["network"]: $network = "";
+        $ip_addr = isset($_POST["ip"]) ? $_POST["ip"]: $ip_addr = "";
+        $timestamp = isset($_POST["timestamp"]) ? $_POST["timestamp"]: $timestamp = "";
+        $payload = isset($_POST["payload"]) ? $_POST["payload"]: $payload = "";
         $query1 = "SELECT hostname FROM pi_ping_data WHERE hostname = \"" .$hostname. "\"";
         $result = db_query($query1); 
         if ($result != $hostname) {
