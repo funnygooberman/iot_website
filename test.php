@@ -27,13 +27,14 @@ while($row = $result->fetch_assoc()){
     if ($different_in_seconds > $difference) {
         echo "\n";
         echo "One offline!";
-      $num_offline = $num_offline + 1;
+        $num_offline = $num_offline + 1;
     }
     else {
+        echo "One online!";
       $num_online = $num_online + 1;
     }
   }
-  echo "Hello \n";
+echo "\n";
 echo "num_online: ";
 echo $num_online;
 echo "\n num_offline: ";
