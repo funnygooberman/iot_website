@@ -9,28 +9,29 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
     exit;
 }
 require_once "database.php";
-$php_id = $_SESSION["admin_id"];
-$check_query = "SELECT * FROM pi_ping_data";
+//$php_id = $_SESSION["admin_id"];
+$check_query = "SELECT timestamp FROM pi_ping_data";
 $result = db_query($check_query);
 $num_online = 0;
 $num_offline = 0;
+$date = date('Y-m-d H:i:s');
+
 
 
 while($row = $result->fetch_assoc()){
-    $hostname = $row['hostname'];
-    $network = $row['network'];
-    $ip_addr = $row['ip_addr'];
-    $timestamp = $row['timestamp'];
-    $payload = $row['payload'];
+    $timestamps[] = $row['timestamp'];
   }
 
-  foreach($timestamp as $item) {
-    $date = date('Y-m-d H:i:s');
+  foreach($timestamps as $item) {
     $difference_in_seconds = strtotime($date) - strtotime($item);
-    if ($different_in_seconds > 350) {
-      $num_offline = $num_offline + 1;
+    (int) $difference_in_seconds;
+    if ($difference_in_seconds > 350) {
+        echo "\n";
+        echo "One offline!";
+        $num_offline = $num_offline + 1;
     }
     else {
+        echo "One online!";
       $num_online = $num_online + 1;
     }
   }
