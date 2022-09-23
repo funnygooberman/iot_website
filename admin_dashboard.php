@@ -60,10 +60,10 @@ while($row = $result->fetch_assoc()){
         <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
           <ul role="list" class="nav-menu-two w-list-unstyled">
             <li>
-              <a href="admin_dashboard.php" class="nav-link">Admin Home</a>
+              <a href="admin_dashboard.php" class="nav-link">Admin</a>
             </li>
             <li>
-              <a href="admin_ping_data.php" class="nav-link">Ping Data</a>
+              <a href="admin_ping_data.php" class="nav-link">Ping</a>
             </li>
             <li>
               <div class="nav-divider"></div>
