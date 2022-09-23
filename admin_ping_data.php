@@ -71,7 +71,9 @@ $result = db_query($check_query);
       </div>
     </div>
   </div>
+  <div class = 'container'>
   <h1 class="centered-heading margin-bottom-32px">Ping Data</h1>
+  </div>
   <?php
   while($row = $result->fetch_assoc()){
     echo "<section class='hero-heading-center wf-section'>";
