@@ -9,15 +9,16 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
     exit;
 }
 require_once "database.php";
-//$php_id = $_SESSION["admin_id"];
-$check_query = "SELECT * FROM pi_ping_data";
-$result = db_query($check_query);
-
 if (isset($_GET['entry_id'])) {
   $entry_drop = $_GET['entry_id'];
   $drop = "DELETE FROM pi_ping_data WHERE hostname = \"" .$entry_drop. "\"";
   db_query($drop);
 }
+//$php_id = $_SESSION["admin_id"];
+$check_query = "SELECT * FROM pi_ping_data";
+$result = db_query($check_query);
+
+
 
 
 
