@@ -2,6 +2,7 @@
 // Initialize the session
 date_default_timezone_set('America/Denver');
 session_start();
+$date = date('Y-m-d H:i:s');
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
@@ -91,6 +92,13 @@ $result = db_query($check_query);
   while($row = $result->fetch_assoc()){
     echo "<section class='hero-heading-center wf-section'>";
     echo "<div class='container'>";
+    $difference_in_seconds = strtotime($date) - strtotime($row['timestamp']);
+    if ($difference_in_seconds > 350) {
+      echo "<h1 class='centered-heading margin-bottom-32px' style='color:red;'>". $row['hostname']."</h1>";
+  }
+  else {
+    echo "<h1 class='centered-heading margin-bottom-32px' style='color:green;'>". $row['hostname']."</h1>";
+  }
       echo "<h1 class='centered-heading margin-bottom-32px'>". $row['hostname']."</h1>";
       echo "<div class='hero-wrapper'>";
         echo "<div class='hero-split'>";
