@@ -103,7 +103,7 @@ while($row = $result->fetch_assoc()){
           <p class="margin-bottom-24px">Number of PI's Online: <?php echo $num_online?></p>
           <p class="margin-bottom-24px">Number of PI's Offline: <?php echo $num_offline?></p>
         </div>
-        <a href="admin" class="button-primary-2 w-button">View Full Ping Data</a>
+        <a href="admin_ping_data.php" class="button-primary-2 w-button">View Full Ping Data</a>
       </div>
     </div>
   </section>
