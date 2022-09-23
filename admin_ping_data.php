@@ -10,28 +10,14 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
 }
 require_once "database.php";
 //$php_id = $_SESSION["admin_id"];
-$check_query = "SELECT timestamp FROM pi_ping_data";
+$check_query = "SELECT * FROM pi_ping_data";
 $result = db_query($check_query);
-$num_online = 0;
-$num_offline = 0;
-$date = date('Y-m-d H:i:s');
 
 
 
-while($row = $result->fetch_assoc()){
-    $timestamps[] = $row['timestamp'];
-  }
 
-  foreach($timestamps as $item) {
-    $difference_in_seconds = strtotime($date) - strtotime($item);
-    (int) $difference_in_seconds;
-    if ($difference_in_seconds > 350) {
-        $num_offline = $num_offline + 1;
-    }
-    else {
-      $num_online = $num_online + 1;
-    }
-  }
+
+
 ?>
 
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
@@ -95,18 +81,24 @@ while($row = $result->fetch_assoc()){
       </div>
     </div>
   </div>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">PI Dashboard</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">Number of PI's Online: <?php echo $num_online?></p>
-          <p class="margin-bottom-24px">Number of PI's Offline: <?php echo $num_offline?></p>
-        </div>
-        <a href="admin" class="button-primary-2 w-button">View Full Ping Data</a>
-      </div>
-    </div>
-  </section>
+  <?php
+  while($row = $result->fetch_assoc()){
+    echo "<section class='hero-heading-center wf-section'>";
+    echo "<div class='container'>";
+      echo "<h1 class='centered-heading margin-bottom-32px'>". $row['hostname']."</h1>";
+      echo "<div class='hero-wrapper'>";
+        echo "<div class='hero-split'>";
+          echo " <p class='margin-bottom-24px'>Network: ". $row['network'] ."</p>";
+          echo " <p class='margin-bottom-24px'>Network: ". $row['network'] ."</p>";
+          echo " <p class='margin-bottom-24px'>IP Address: ". $row['ip_addr'] ."</p>";
+          echo " <p class='margin-bottom-24px'>Last Updated: ". $row['timestamp'] ."</p>";
+        echo "</div>";
+      echo "</div>";
+    echo "</div>";
+  echo "</section>";
+  }
+  ?>
+  
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
