@@ -13,7 +13,11 @@ require_once "database.php";
 $check_query = "SELECT * FROM pi_ping_data";
 $result = db_query($check_query);
 
-
+if (isset($_GET['entry_id'])) {
+  $entry_drop = $_GET['entry_id'];
+  $drop = "DELETE FROM pi_ping_data WHERE hostname = \\" .$entry_drop. \"\"";
+  db_query($drop);
+}
 
 
 
@@ -94,7 +98,7 @@ $result = db_query($check_query);
           echo " <p class='margin-bottom-24px'>IP Address: ". $row['ip_addr'] ."</p>";
           echo " <p class='margin-bottom-24px'>Last Updated: ". $row['timestamp'] ."</p>";
         echo "</div>";
-        echo "<a href='admin_ping_data.php' class='button-primary-2 w-button'>Delete Device</a>";
+        echo "<a href='?entry_id=" .$row['hostname']."' class='button-primary-2 w-button'>Delete Device</a>";
       echo "</div>";
     echo "</div>";
   echo "</section>";
