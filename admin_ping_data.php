@@ -71,13 +71,15 @@ $result = db_query($check_query);
       </div>
     </div>
   </div>
+  <section class='hero-heading-center wf-section'>
   <div class = 'container'>
     <div class='hero-wrapper'>
       <div class='hero-split'>
-  <h1 class="centered-heading margin-bottom-32px">Ping Data</h1>
+        <h1 class="centered-heading margin-bottom-32px">Ping Data</h1>
       </div>
     </div>
   </div>
+  </section>
   <?php
   while($row = $result->fetch_assoc()){
     echo "<section class='hero-heading-center wf-section'>";
