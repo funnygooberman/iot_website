@@ -94,6 +94,7 @@ $result = db_query($check_query);
           echo " <p class='margin-bottom-24px'>IP Address: ". $row['ip_addr'] ."</p>";
           echo " <p class='margin-bottom-24px'>Last Updated: ". $row['timestamp'] ."</p>";
         echo "</div>";
+        echo "<a href='admin_ping_data.php' class='button-primary-2 w-button'>Delete Device</a>";
       echo "</div>";
     echo "</div>";
   echo "</section>";
