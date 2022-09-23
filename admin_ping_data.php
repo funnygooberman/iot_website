@@ -97,9 +97,8 @@ $result = db_query($check_query);
       echo "<h1 class='centered-heading margin-bottom-32px' style='color:red;'>". $row['hostname']."</h1>";
   }
   else {
-    echo "<h1 class='centered-heading margin-bottom-32px' style='color:green;'>". $row['hostname']."</h1>";
+    echo "<h1 class='centered-heading margin-bottom-32px' style='color:#66FF00;'>". $row['hostname']."</h1>";
   }
-      echo "<h1 class='centered-heading margin-bottom-32px'>". $row['hostname']."</h1>";
       echo "<div class='hero-wrapper'>";
         echo "<div class='hero-split'>";
           echo " <p class='margin-bottom-24px'>Network: ". $row['network'] ."</p>";
