@@ -52,26 +52,10 @@ $result = db_query($check_query);
         <nav role="navigation" class="nav-menu-wrapper w-nav-menu">
           <ul role="list" class="nav-menu-two w-list-unstyled">
             <li>
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="admin_dashboard.php" class="nav-link">Admin</a>
             </li>
             <li>
-              <a href="development.html" class="nav-link">About</a>
-            </li>
-            <li>
-              <a href="development.html" class="nav-link">Contact</a>
-            </li>
-            <li>
-              <div data-hover="true" data-delay="0" class="nav-dropdown w-dropdown">
-                <div class="nav-dropdown-toggle w-dropdown-toggle">
-                  <div class="nav-dropdown-icon w-icon-dropdown-toggle"></div>
-                  <div class="text-block">Services</div>
-                </div>
-                <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
-                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
-                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
-                </nav>
-              </div>
+              <a href="admin_ping_data.php" class="nav-link">Ping</a>
             </li>
             <li>
               <div class="nav-divider"></div>
