@@ -15,7 +15,7 @@ $result = db_query($check_query);
 
 if (isset($_GET['entry_id'])) {
   $entry_drop = $_GET['entry_id'];
-  $drop = "DELETE FROM pi_ping_data WHERE hostname = \\" .$entry_drop. \"\"";
+  $drop = "DELETE FROM pi_ping_data WHERE hostname = \"" .$entry_drop. "\"";
   db_query($drop);
 }
 
