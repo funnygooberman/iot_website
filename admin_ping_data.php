@@ -72,9 +72,11 @@ $result = db_query($check_query);
     </div>
   </div>
   <div class = 'container'>
-  <div class='hero-split'>
+    <div class='hero-wrapper'>
+      <div class='hero-split'>
   <h1 class="centered-heading margin-bottom-32px">Ping Data</h1>
-  </div>
+      </div>
+    </div>
   </div>
   <?php
   while($row = $result->fetch_assoc()){
