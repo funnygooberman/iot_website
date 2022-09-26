@@ -94,7 +94,6 @@ $result = db_query($check_query);
       echo "<div class='hero-wrapper'>";
         echo "<div class='hero-split'>";
           echo " <p class='margin-bottom-24px'>Network: ". $row['network'] ."</p>";
-          echo " <p class='margin-bottom-24px'>Network: ". $row['network'] ."</p>";
           echo " <p class='margin-bottom-24px'>IP Address: ". $row['ip_addr'] ."</p>";
           echo " <p class='margin-bottom-24px'>Last Updated: ". $row['timestamp'] ."</p>";
         echo "</div>";
