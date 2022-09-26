@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="development.html" class="nav-link">About</a>
+              <a href="admin_dashboard.php" class="nav-link">Admin</a>
             </li>
             <li>
               <a href="development.html" class="nav-link">Contact</a>
