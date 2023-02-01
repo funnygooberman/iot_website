@@ -1,9 +1,31 @@
+<?php
+// Initialize the session
+date_default_timezone_set('America/Denver');
+session_start();
+$date = date('Y-m-d H:i:s');
+ 
+// Check if the user is logged in, if not then redirect him to login page
+require_once "database.php";
+//$php_id = $_SESSION["admin_id"];
+$check_query = "SELECT * FROM ring_data";
+$result = db_query($check_query);
+$result1 = db_query($check_query);
+
+
+
+
+
+
+?>
+
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
 <!--  Last Published: Tue Sep 20 2022 22:34:46 GMT+0000 (Coordinated Universal Time)  -->
-<html data-wf-page="632a181108141a6b738932b8" data-wf-site="632a181108141a036b8932b7">
+<html data-wf-page="632a394cfcc00bc1310719e9" data-wf-site="632a181108141a036b8932b7">
 <head>
   <meta charset="utf-8">
-  <title>USAFA IOT</title>
+  <title>Security Dashboard</title>
+  <meta content="Dashboard" property="og:title">
+  <meta content="Dashboard" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -61,50 +83,75 @@
       </div>
     </div>
   </div>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">Office Signs</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">Create a sign that will update its contents based on the data you provide it. A great solution for those with changing schedules. The signs are also just plain cool. </p>
-        </div>
-        <a href="login.php" class="button-primary-2 w-button">Log in to Create your Sign</a>
+  <section class='hero-heading-center wf-section'>
+  <div class = 'container'>
+    <div class='hero-wrapper'>
+      <div class='hero-split'>
+        <h1 class="centered-heading margin-bottom-32px">Security Dashboard</h1>
       </div>
     </div>
+  </div>
   </section>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">Door Sensors</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">See the status of whether a door is opened or closed. To the instructors: It's not weird, it's helpful.</p>
-        </div>
-        <a href="SecurityDashboard.php" class="button-primary-2 w-button">See the Status of the 2nd Floor</a>
-      </div>
-    </div>
-  </section>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">Beacons</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">Know where your instructor was last seen through the power of bluetooth! (Consenting instructors of course)</p>
-        </div>
-        <a href="beacons.php" class="button-primary-2 w-button">See Beacon Status</a>
-      </div>
-    </div>
-  </section>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">Weather Station</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">A solution to check and see how the weather is doing without going outside. It gets cold outside, so why not check from the warmth of your home?</p>
-        </div>
-        <a href="development.html" class="button-primary-2 w-button">Learn more here</a>
-      </div>
-    </div>
-  </section>
+
+  <?php
+  $secure = 1;
+  while($row = $result->fetch_assoc()){
+    
+    if ($row['device_state'] == "on") {
+      $secure = 0;
+      
+  }
+}
+  echo "<section class='hero-heading-center wf-section'>";
+    echo "<div class='container'>";
+      echo "<div class='hero-wrapper'>";
+      if ($secure == 0) {
+        echo "<h1 class='centered-heading margin-bottom-32px' style='color:red;'>The 2nd Floor is not secure.</h1>";
+      }
+      elseif ($secure == 1) {
+        echo "<h1 class='centered-heading margin-bottom-32px' style='color:#66FF00;'>The 2nd Floor is secure.</h1>";
+      }
+  
+        echo "</div>";
+      echo "</div>";
+    echo "</div>";
+  echo "</section>";
+  echo "<section class='hero-heading-center wf-section'>";
+    echo "<div class='container'>";
+    echo "<table>";
+      echo "<tr>";
+        echo "<th style= 'width: 25%; font-size: 30px; '>Device Room</th>";
+        echo "<th style= 'width: 25%; font-size: 30px; '>Type</th>" ;
+        echo "<th style= 'width: 25%; font-size: 30px; '>State</th>";
+    echo "</tr>";
+    while($row = $result1->fetch_assoc()) {
+      echo"<tr>";
+        echo "<td style='text-align: center; height: 50px; vertical-align: bottom; font-size: 25px;'>".$row['device_room']."</td>";
+        echo "<td style='text-align: center; height: 50px; vertical-align: bottom; font-size: 25px;'>".$row['device_type']."</td>";
+        
+        if($row['device_type'] == "contact" && $row['device_state'] == 'on') {
+          echo"<td style='text-align: center; height: 50px; vertical-align: bottom; color:red; font-size: 25px;'>Door Open </td>";
+        }
+        elseif($row['device_type'] == "contact" && $row['device_state'] == 'off') {
+          echo"<td style='text-align: center; height: 50px; vertical-align: bottom; color:#66FF00; font-size: 25px;'>Door Closed</td>";
+        }
+        elseif($row['device_type'] == "motion" && $row['device_state'] == 'on') {
+          echo"<td style='text-align: center; height: 50px; vertical-align: bottom; color:red; font-size: 25px;'>Motion Detected</td>";
+        }
+        elseif($row['device_type'] == "motion" && $row['device_state'] == 'off') {
+          echo"<td style='text-align: center; height: 50px; vertical-align: bottom; color:#66FF00; font-size: 25px;'>No Motion Detected</td>";
+        }
+        
+      echo"</tr>";
+    }
+      
+    echo"</table>";
+    echo "</div>";
+    echo "</div>";
+  echo "</section>";
+  echo "<section class='hero-heading-center wf-section'>";
+
+  ?>
   
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>

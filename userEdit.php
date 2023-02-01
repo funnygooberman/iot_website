@@ -3,24 +3,22 @@
 session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
+    header("location: admin_login.php");
     exit;
 }
 require_once "database.php";
 $php_id = $_SESSION["id"];
-$check_query = "SELECT * FROM display_data WHERE userID = $php_id;";
-$result = db_query($check_query);
-
+$result;
+if (isset($_GET['entry_id'])) {
+  $user_id = $_GET['entry_id'];
+  $check_query = "SELECT * FROM users WHERE id = \"" .$user_id. "\"";
+  $result = db_query($check_query);
+}
 
 while($row = $result->fetch_assoc()){
-    $name2 = $row['name'];
-    $file_path2 = $row['image_path'];
-    $location2 = $row['location'];
-    $message2 = $row['message'];
-    $title2 = $row['title'];
-	$pi_id = $row['pi_id'];
-    
+    $id = $row['id'];
+    $username = $row['username'];
   }
 ?>
 
@@ -29,7 +27,7 @@ while($row = $result->fetch_assoc()){
 <html data-wf-page="632a394cfcc00bc1310719e9" data-wf-site="632a181108141a036b8932b7">
 <head>
   <meta charset="utf-8">
-  <title>Dashboard</title>
+  <title>User Edit</title>
   <meta content="Dashboard" property="og:title">
   <meta content="Dashboard" property="twitter:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -88,22 +86,15 @@ while($row = $result->fetch_assoc()){
     </div>
   </div>
   <div class="form-block w-form">
-    <form  action="singleEInkSubmit.php" method="post" class="form-4" enctype="multipart/form-data">
-      <h1 class="heading-3">Office Sign Configuration</h1>
-      <label for="name" class="field-label-4">Name</label>
-      <input type="text" class="text-field-6 w-input" maxlength="256" name="name" data-name="Name" placeholder="Ex. John Smith" id="name" value = "<?php echo $name2; ?>">
-      <label for="title" class="field-label-5">Title</label>
-      <input type="text" class="text-field-7 w-input" maxlength="256" name="title" data-name="Title" placeholder="Ex. CEO of Company " id="title" value = "<?php echo $title2; ?>">
-      <label for="message" class="field-label-6">Message</label>
-      <textarea placeholder="Ex. Monday - Work" maxlength="5000" id="message" name="message" class="textarea w-input"><?php echo $message2; ?></textarea>
-      <label for="location" class="field-label-7">Room Number</label>
-      <input type="text" class="text-field-8 w-input" maxlength="256" name="location" placeholder="Ex. 1A23" id="location" value = "<?php echo $location2; ?>">
-      <label for="image" class="field-label-8">Image Upload</label>
-      <img src="<?php echo $file_path2 ?>" alt="Upload an image!"  style="height: 50%; width: 25%;">
-      <input type="file" name="fileToUpload" id="fileToUpload" hidden/>
-      <label class="button-2 w-button" for="fileToUpload">Upload Image</label>
-      <label for="pi_id" class="field-label-9">PI ID</label>
-      <input type="pi_id" class="text-field-9 w-input" maxlength="256" name="pi_id"  placeholder="Ex. rpi-1A23" id="pi_id" value = "<?php echo $pi_id; ?>">
+    
+    <form  action="userEditSubmit.php" method="post" class="form-4" enctype="multipart/form-data">
+      <h1 class="heading-3">Edit User</h1>
+      <label for="id" class="field-label-5">ID: <?php echo $id; ?></label>
+      <input type="hidden" name="id" data-name="ID" placeholder="ID" id="id" value = "<?php echo $id; ?>">
+      <label for="username" class="field-label-5">Username</label>
+      <input type="text" class="text-field-7 w-input" maxlength="256" name="username" data-name="Username" placeholder="Username" id="username" value = "<?php echo $username; ?>">
+      <label for="password" class="field-label-5">New Password</label>
+      <input type="password" class="text-field-7 w-input" maxlength="256" name="password" data-name="Password" placeholder="New Password" id="password">
       <input type="submit" value="Submit" class="submit-button-2 w-button">
     </form>
     

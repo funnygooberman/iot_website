@@ -2,6 +2,7 @@
 // Initialize the session
 date_default_timezone_set('America/Denver');
 session_start();
+$date = date('Y-m-d H:i:s');
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
@@ -9,38 +10,21 @@ if(!isset($_SESSION["admin_loggedin"]) || $_SESSION["admin_loggedin"] !== true){
     exit;
 }
 require_once "database.php";
+if (isset($_GET['delete_id'])) {
+  $entry_drop = $_GET['delete_id'];
+  $drop = "DELETE FROM users WHERE id = \"" .$entry_drop. "\"";
+  db_query($drop);
+}
+
 //$php_id = $_SESSION["admin_id"];
-$check_query = "SELECT timestamp FROM pi_ping_data";
+$check_query = "SELECT * FROM users";
 $result = db_query($check_query);
-$num_online = 0;
-$num_offline = 0;
-$date = date('Y-m-d H:i:s');
 
-$user_query = "SELECT username FROM users";
-$user_result = db_query($user_query);
-$numUsers = 0;
 
-while($userRow = $user_result->fetch_assoc()) {
-    $userResult[] = $userRow['username'];
-}
-foreach($userResult as $item) {
-  $numUsers = $numUsers + 1;
-}
 
-while($row = $result->fetch_assoc()){
-    $timestamps[] = $row['timestamp'];
-  }
 
-  foreach($timestamps as $item) {
-    $difference_in_seconds = strtotime($date) - strtotime($item);
-    (int) $difference_in_seconds;
-    if ($difference_in_seconds > 350) {
-        $num_offline = $num_offline + 1;
-    }
-    else {
-      $num_online = $num_online + 1;
-    }
-  }
+
+
 ?>
 
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
@@ -75,9 +59,6 @@ while($row = $result->fetch_assoc()){
               <a href="admin_ping_data.php" class="nav-link">Ping</a>
             </li>
             <li>
-              <a href="admin_user_data.php" class="nav-link">Users</a>
-            </li>
-            <li>
               <div class="nav-divider"></div>
             </li>
             <li class="mobile-margin-top-10">
@@ -91,29 +72,39 @@ while($row = $result->fetch_assoc()){
       </div>
     </div>
   </div>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">PI Dashboard</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">Number of PI's Online: <?php echo $num_online?></p>
-          <p class="margin-bottom-24px">Number of PI's Offline: <?php echo $num_offline?></p>
-        </div>
-        <a href="admin_ping_data.php" class="button-primary-2 w-button">View Full Ping Data</a>
+  <section class='hero-heading-center wf-section'>
+  <div class = 'container'>
+    <div class='hero-wrapper'>
+      <div class='hero-split'>
+        <h1 class="centered-heading margin-bottom-32px">User Data</h1>
       </div>
     </div>
+  </div>
   </section>
-  <section class="hero-heading-center wf-section">
-    <div class="container">
-      <h1 class="centered-heading margin-bottom-32px">Users</h1>
-      <div class="hero-wrapper">
-        <div class="hero-split">
-          <p class="margin-bottom-24px">Number of Users: <?php echo $numUsers?></p>
-        </div>
-        <a href="admin_user_data.php" class="button-primary-2 w-button">View Full User Data</a>
-      </div>
-    </div>
-  </section>
+  <?php
+  echo "<section class='hero-heading-center wf-section'>";
+    echo "<div class='container'>";
+    
+    while($row = $result->fetch_assoc()) {
+        echo "<section class='hero-heading-center wf-section'>";
+      echo "<div class='container'>";
+        echo "<div class='hero-wrapper'>";
+          echo "<div class='hero-split'>";
+            echo " <p class='margin-bottom-24px'>ID: ". $row['id'] ."</p>";
+            echo " <p class='margin-bottom-24px'>Username: ". $row['username'] ."</p>";
+          echo "</div>";
+          echo "<a href='userEdit.php?entry_id=" .$row['id']."' class='button-primary-2 w-button'>Edit User</a>";
+          echo "<a href='?delete_id=".$row['id']."' class='button-primary-2 w-button'>Delete User</a>";
+        echo "</div>";
+      echo "</div>";
+    echo "</section>";
+    }
+    echo "</div>";
+  echo "</section>";
+  echo "<section class='hero-heading-center wf-section'>";
+
+  ?>
+  
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=632a181108141a036b8932b7" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

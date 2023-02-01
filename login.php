@@ -128,7 +128,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <div class="text-block">Services</div>
                 </div>
                 <nav class="nav-dropdown-list shadow-three mobile-shadow-hide w-dropdown-list">
-                  <a href="development.html" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
+                  <a href="SecurityDashboard.php" class="nav-dropdown-link w-dropdown-link">Security Dashboard</a>
+                  <a href="login.php" class="nav-dropdown-link w-dropdown-link">Office Signs</a>
+                  <a href="beacons.php" class="nav-dropdown-link w-dropdown-link">Beacons</a>
                   <a href="development.html" class="nav-dropdown-link w-dropdown-link">Weather Station</a>
                   <a href="development.html" class="nav-dropdown-link w-dropdown-link">Parking Lot</a>
                   <div class="w-container"></div>

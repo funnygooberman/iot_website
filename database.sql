@@ -39,3 +39,21 @@ CREATE TABLE pi_ping_data (
     payload   VARCHAR(100),
     PRIMARY KEY (hostname)
 );
+
+CREATE TABLE ring_data (
+    device_id VARCHAR(100),
+    device_type VARCHAR(100),
+    device_room VARCHAR(100),
+    device_state VARCHAR(100),
+    PRIMARY KEY (device_id)
+);
+
+CREATE TABLE bluetooth_data (
+    bluetooth_id VARCHAR(100),
+    owner VARCHAR(100),
+    location VARCHAR(100),
+    timestamp VARCHAR(100),
+    rssi VARCHAR(100),
+    pi_id VARCHAR(100),
+    PRIMARY KEY (bluetooth_id)    
+);
